@@ -1,0 +1,23 @@
+%h1 Listing notices
+
+%table
+  %tr
+    %th Id
+    %th Content
+    %th Sender
+    %th
+    %th
+    %th
+
+  - @notices.each do |notice|
+    %tr
+      %td= notice.id
+      %td= notice.content
+      %td= notice.sender_id
+      %td= link_to 'Show', notice
+      %td= link_to 'Edit', edit_notice_path(notice)
+      %td= link_to 'Destroy', notice, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Notice', new_notice_path
