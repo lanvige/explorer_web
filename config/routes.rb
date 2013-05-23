@@ -4,8 +4,8 @@ Explorer::Application.routes.draw do
   end
   devise_for :users
   resources :users, :only => [:show, :index]
-  constraints(Subdomain) do
-    match '/' => 'profiles#show'
-  end
+  # constraints(Subdomain) do
+  #   match '/' => 'profiles#show'
+  # end
   root :to => "home#index"
 end
