@@ -1,4 +1,10 @@
 Explorer::Application.routes.draw do
+  resources :clazzes
+
+
+  resources :clazzes #:path => 'clazz'
+
+
   resources :roles
 
 

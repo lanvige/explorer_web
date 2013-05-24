@@ -13,3 +13,9 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+# http://stackoverflow.com/questions/1640408/ruby-on-rails-pluralization-help
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'clazz', 'clazzes'
+end

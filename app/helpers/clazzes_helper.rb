@@ -1,0 +1,2 @@
+module ClazzesHelper
+end

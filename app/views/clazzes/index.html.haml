@@ -1,0 +1,23 @@
+%h1 Listing clazzes
+
+%table
+  %tr
+    %th Id
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @clazzes.each do |clazz|
+    %tr
+      %td= clazz.id
+      %td= clazz.name
+      %td= clazz.description
+      %td= link_to 'Show', clazz
+      %td= link_to 'Edit', edit_clazz_path(clazz)
+      %td= link_to 'Destroy', clazz, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Clazz', new_clazz_path

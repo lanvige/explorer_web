@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Id:
+  = @clazz.id
+%p
+  %b Name:
+  = @clazz.name
+%p
+  %b Description:
+  = @clazz.description
+
+= link_to 'Edit', edit_clazz_path(@clazz)
+\|
+= link_to 'Back', clazzes_path
