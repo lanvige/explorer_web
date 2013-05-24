@@ -1,0 +1,11 @@
+= simple_form_for(@courseware) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :course
+    = f.input :icon
+
+  .form-actions
+    = f.button :submit

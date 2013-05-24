@@ -1,0 +1,25 @@
+%h1 Listing coursewares
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Course
+    %th Icon
+    %th
+    %th
+    %th
+
+  - @coursewares.each do |courseware|
+    %tr
+      %td= courseware.name
+      %td= courseware.description
+      %td= courseware.course
+      %td= courseware.icon
+      %td= link_to 'Show', courseware
+      %td= link_to 'Edit', edit_courseware_path(courseware)
+      %td= link_to 'Destroy', courseware, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Courseware', new_courseware_path

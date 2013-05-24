@@ -12,7 +12,8 @@ class User
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
   field :activited
-  
+  field :activited_at,       :type => Time
+
   validates_presence_of :email
   validates_presence_of :encrypted_password
   

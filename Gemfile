@@ -1,15 +1,23 @@
 # source 'https://rubygems.org'
 source 'http://ruby.taobao.org'
 
+# basic structure
 gem 'rails', '3.2.13'
+
+gem 'grape'
+
+gem "mongoid", ">= 3.1.2"
+gem "mongoid-rspec", ">= 1.7.0", :group => :test
 
 gem "devise", ">= 2.2.3"
 gem "cancan"
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem "bootstrap-sass", ">= 2.3.0.0"
 end
 
 gem 'jquery-rails'
@@ -17,10 +25,6 @@ gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development
 
 gem "unicorn", ">= 4.3.1", :group => :production
-
-gem "mongoid", ">= 3.1.2"
-gem "mongoid-rspec", ">= 1.7.0", :group => :test
-
 
 
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
@@ -35,7 +39,7 @@ gem "rb-inotify", ">= 0.9.0", :group => :development, :require => false
 gem "rb-fsevent", ">= 0.9.3", :group => :development, :require => false
 gem "rb-fchange", ">= 0.0.6", :group => :development, :require => false
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.3.0.0"
+
 
 gem "simple_form", ">= 2.1.0"
 gem "quiet_assets", ">= 1.0.2", :group => :development
