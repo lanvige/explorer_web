@@ -6,4 +6,5 @@ class Notice
 
   field :content, type: String, :default => ""
   field :sender_id, type: String
+  field :is_readed, type:Bool, :default => false
 end

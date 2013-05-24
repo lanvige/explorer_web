@@ -1,4 +1,7 @@
 Explorer::Application.routes.draw do
+  resources :roles
+
+
   resources :notices
 
 

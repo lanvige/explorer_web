@@ -4,6 +4,7 @@ source 'http://ruby.taobao.org'
 gem 'rails', '3.2.13'
 
 gem "devise", ">= 2.2.3"
+gem "cancan"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
