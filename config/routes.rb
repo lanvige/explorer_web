@@ -1,5 +1,7 @@
-Explorer::Application.routes.draw do
 
+Explorer::Application.routes.draw do
+  require 'api'
+  
   root :to => "home#index"
   # authenticated :user do
   #   root :to => 'home#index'
@@ -19,7 +21,4 @@ Explorer::Application.routes.draw do
   # constraints(Subdomain) do
   #   match '/' => 'profiles#show'
   # end
-
-  
-
 end

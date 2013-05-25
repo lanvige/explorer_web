@@ -5,6 +5,7 @@ source 'http://ruby.taobao.org'
 gem 'rails', '3.2.13'
 
 gem 'grape'
+gem 'grape-entity'
 
 gem "mongoid", ">= 3.1.2"
 gem "mongoid-rspec", ">= 1.7.0", :group => :test
