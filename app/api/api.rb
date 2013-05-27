@@ -1,7 +1,11 @@
 require 'grape'
-require 'user_api'
-require 'notice_api'
+# require 'user_api'
+# require 'notice_api'
 # require 'resources\user'
+Dir[File.dirname(__FILE__) + '/resources/*.rb'].each do |file|
+  require File.basename(file, File.extname(file))
+end
+
 
 module Explorer
   class API < Grape::API
@@ -29,5 +33,5 @@ module Explorer
 end
 
 # require all the resources and entities under api folder.
-# Dir[File.dirname(__FILE__) + '/resources/*.rb'].each {|file| require file }
+
 # Dir[File.dirname(__FILE__) + '/api/entities/*.rb'].each {|file| require file }
