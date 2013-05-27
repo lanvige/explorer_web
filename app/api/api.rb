@@ -1,20 +1,18 @@
 require 'grape'
 
+# require all the resources and entities under api folder.
+# http://stackoverflow.com/questions/735073/best-way-to-require-all-files-from-a-directory-in-ruby
 Dir[File.dirname(__FILE__) + '/resources/*.rb'].each do |file|
   require File.basename(file, File.extname(file))
 end
 
 module Explorer
   class API < Grape::API
-    # error_format :json
+    # prefix 'api'
     format :json
     default_format :json
-
+    
     version 'v1', :using => :path
-
-    get :hello do
-      { text: 'Hello from V0' }
-    end
 
     namespace :info do
       desc "Provides information about the API"
@@ -23,12 +21,26 @@ module Explorer
       end
     end
 
-
     mount Explorer::UserAPI => '/'
-    mount Explorer::Notice => '/'
+    mount Explorer::NoticeAPI => '/'
+
+
+    namespace :roles do
+      desc "Provides information about the API"
+      get do
+        @roles = Role.all
+        present @roles
+      end
+    end
+
+    namespace :clazzes do
+      desc ""
+      get do
+        @clazzes = Clazz.all
+        present @clazzes
+      end
+    end
+
   end
 end
-
-# require all the resources and entities under api folder.
-# Dir[File.dirname(__FILE__) + '/api/entities/*.rb'].each {|file| require file }
 

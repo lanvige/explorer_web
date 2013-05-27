@@ -1,4 +1,3 @@
-
 # require 'grape'
 
 module Explorer
