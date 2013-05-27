@@ -39,7 +39,7 @@ module Explorer
     # api
     config.paths.add "app/api", glob: "**/*.rb"
     config.autoload_paths += Dir["#{Rails.root}/app/api/*"]
-    config.autoload_paths += Dir["#{Rails.root}/app/api/resources/*"]
+    # config.autoload_paths += Dir["#{Rails.root}/app/api/resources/*"]
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
