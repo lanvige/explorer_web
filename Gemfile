@@ -8,7 +8,7 @@ gem 'grape'
 gem 'grape-entity'
 
 gem "mongoid", ">= 3.1.2"
-gem 'mongoid_auto_increment_id'
+#gem 'mongoid_auto_increment_id'
 gem "mongoid-rspec", ">= 1.7.0", :group => :test
 
 gem "devise", ">= 2.2.3"
