@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class RolesController < ApplicationController
   # GET /roles
   # GET /roles.json

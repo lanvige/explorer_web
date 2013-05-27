@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Role
   include Mongoid::Document
   include Mongoid::Timestamps

@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json

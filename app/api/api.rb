@@ -1,8 +1,8 @@
 require 'grape'
+require 'resources/user'
 
 module Explorer
   class API < Grape::API
-    # prefix "api"
     # rescue_from :all, :backtrace => false
     version 'v1', :using => :path
     format :json
@@ -13,6 +13,8 @@ module Explorer
     # helpers APIHelpers
   	# mount GrapeDemoAPI
     # mount API_v2
+
+    mount Explorer::API::User => '/'
 
     get :hello do
       { text: 'Hello from V1' }

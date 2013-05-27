@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class ProfilesController < ApplicationController
   def show
     @user = User.where(:name => request.subdomain).first || not_found
