@@ -1,5 +1,6 @@
 require 'grape'
-# require 'api_v1'
+require 'user_api'
+require 'notice_api'
 # require 'resources\user'
 
 module Explorer
@@ -22,6 +23,11 @@ module Explorer
     end
 
 
-    # mount Explorer::APIV1
+    mount Explorer::UserAPI => '/'
+    mount Explorer::NoticeAPI => '/'
   end
 end
+
+# require all the resources and entities under api folder.
+# Dir[File.dirname(__FILE__) + '/resources/*.rb'].each {|file| require file }
+# Dir[File.dirname(__FILE__) + '/api/entities/*.rb'].each {|file| require file }
