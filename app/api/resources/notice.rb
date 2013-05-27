@@ -2,7 +2,7 @@
 # require 'grape'
 
 module Explorer
-  class NoticeAPI < Grape::API
+  class Notice < Grape::API
 
     namespace :notices do
       desc "Provides information about the API"
