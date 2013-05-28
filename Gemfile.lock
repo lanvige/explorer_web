@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/thetron/mongoid_token.git
+  revision: 70049745cc4baa4136601368033d06a955225dc3
+  branch: patch/collisions-define-method
+  specs:
+    mongoid_token (2.0.0)
+      mongoid (~> 3.0)
+
 GEM
   remote: http://ruby.taobao.org/
   specs:
@@ -276,8 +284,9 @@ DEPENDENCIES
   haml-rails (>= 0.4)
   html2haml (>= 1.0.1)
   jquery-rails
-  mongoid (>= 3.1.2)
+  mongoid (>= 3.1.4)
   mongoid-rspec (>= 1.7.0)
+  mongoid_token!
   quiet_assets (>= 1.0.2)
   rails (= 3.2.13)
   rb-fchange (>= 0.0.6)

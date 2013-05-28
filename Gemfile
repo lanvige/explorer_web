@@ -7,9 +7,9 @@ gem 'rails', '3.2.13'
 gem 'grape'
 gem 'grape-entity'
 
-gem "mongoid", ">= 3.1.2"
-#gem 'mongoid_auto_increment_id'
-gem "mongoid-rspec", ">= 1.7.0", :group => :test
+gem "mongoid", ">= 3.1.4"
+# gem 'mongoid_token', '>= 2.0.0'
+gem 'mongoid_token', :git => 'git://github.com/thetron/mongoid_token.git', :branch => 'patch/collisions-define-method'
 
 gem "devise", ">= 2.2.3"
 gem "cancan"
@@ -48,3 +48,6 @@ gem "quiet_assets", ">= 1.0.2", :group => :development
 gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
+
+
+gem "mongoid-rspec", ">= 1.7.0", :group => :test
