@@ -9,8 +9,10 @@ gem 'grape-entity'
 
 gem "mongoid", ">= 3.1.4"
 # gem 'mongoid_token', '>= 2.0.0'
+gem 'mongoid_slug'
 gem 'mongoid_token', :git => 'git://github.com/thetron/mongoid_token.git', :branch => 'patch/collisions-define-method'
 
+# authencation
 gem "devise", ">= 2.2.3"
 gem "cancan"
 

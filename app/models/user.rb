@@ -3,6 +3,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Slug
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -11,14 +12,26 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
+  field :name,               :type => String
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
+  field :phone_number,       :type => String, :default => ""
+  field :realname,           :type => String, :default => ""
+  slug  :phone_number
+
+  # validates_presence_of :name
+  # validates_format_of :name, with: /^[a-z0-9_]+$/, message: 'must be lowercase alphanumerics only'
+  # validates_length_of :name, maximum: 32, message: 'exceeds maximum of 32 characters'
+  # validates_exclusion_of :name, in: ['www', 'mail', 'ftp'], message: 'is not available'
+  # validates_presence_of :email
+
+  validates_presence_of :phone_number
+  validates_presence_of :encrypted_password
+  
+  # status
   field :activited
   field :activited_at,       :type => Time
 
-  validates_presence_of :email
-  validates_presence_of :encrypted_password
-  
   ## Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time
@@ -47,12 +60,19 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
-  index({ email: 1 }, { unique: true, background: true })
-  field :name, :type => String
-  validates_presence_of :name
-  validates_format_of :name, with: /^[a-z0-9_]+$/, message: 'must be lowercase alphanumerics only'
-  validates_length_of :name, maximum: 32, message: 'exceeds maximum of 32 characters'
-  validates_exclusion_of :name, in: ['www', 'mail', 'ftp'], message: 'is not available'
   
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+  # index({ email: 1 }, { unique: true, background: true })
+  
+ 
+  
+  attr_accessible :phone_number, :realname, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
+  
 end
