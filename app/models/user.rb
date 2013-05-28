@@ -8,15 +8,19 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
+  # https://github.com/matteomelani/Auth-Token-Service-Prototype/
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, 
+         :validatable, :token_authenticatable
 
   ## Database authenticatable
   field :name,               :type => String
   field :email,              :type => String, :default => ""
+  field :avatar,             :type => String
   field :encrypted_password, :type => String, :default => ""
   field :phone_number,       :type => String, :default => ""
   field :realname,           :type => String, :default => ""
+  field :bio
   slug  :phone_number
 
   # validates_presence_of :name
@@ -57,13 +61,11 @@ class User
   # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
   # field :locked_at,       :type => Time
 
-  ## Token authenticatable
-  # field :authentication_token, :type => String
+  # Token authenticatable
+  field :authentication_token, :type => String
+
   # run 'rake db:mongoid:create_indexes' to create indexes
-  
   # index({ email: 1 }, { unique: true, background: true })
-  
- 
   
   attr_accessible :phone_number, :realname, :password, :password_confirmation, :remember_me, :created_at, :updated_at
 
