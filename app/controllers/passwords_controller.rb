@@ -1,5 +1,4 @@
 class PasswordsController < Devise::PasswordsController
-  
   def new
     logger.info 'lanvigecreatepasswordmessage'
     super

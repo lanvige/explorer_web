@@ -3,12 +3,10 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    logger.info 'lanvigecreatemessage'
   end
 
   def new
   	logger.info 'lanvigeregnew'
     super
   end
-  
 end
