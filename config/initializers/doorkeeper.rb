@@ -9,6 +9,8 @@ Doorkeeper.configure do
     # Put your resource owner authentication logic here.
     # Example implementation:
     current_user || warden.authenticate!(:scope => :user)
+
+    logger.info 'ssssss';
   end
 
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
@@ -65,8 +67,9 @@ Doorkeeper.configure do
   #   client.superapp? or resource_owner.admin?
   # end
 
-  resource_owner_from_credentials do
-    warden.authenticate!(:scope => :user)
+  resource_owner_from_credentials do |routes|
+    u = User.find_for_database_authentication(:phone_number => params[:phone_number])
+    u if u && u.valid_password?(params[:password])
   end
 
   # Access token expiration time (default 2 hours)
