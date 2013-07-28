@@ -2,7 +2,7 @@
 source 'http://ruby.taobao.org'
 
 # basic structure
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.14'
 
 gem 'grape'
 gem 'grape-entity'
@@ -13,9 +13,11 @@ gem 'mongoid_slug'
 gem 'mongoid_token', :git => 'git://github.com/thetron/mongoid_token.git', :branch => 'patch/collisions-define-method'
 
 # authencation
-gem "devise", ">= 2.2.3"
+gem "devise", ">= 3.0.0"
 gem "cancan"
 
+
+gem 'doorkeeper', '~> 0.6.7'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -53,3 +55,5 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 
 
 gem "mongoid-rspec", ">= 1.7.0", :group => :test
+
+gem 'binding_of_caller', '>= 0.7.1'
